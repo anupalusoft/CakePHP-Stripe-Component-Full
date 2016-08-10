@@ -1,7 +1,7 @@
 <?php 
 spl_autoload_register(function ($class) {
 	foreach (App::path('Vendor') as $base) {
-		$path = $base . 'lib' . str_replace('Stripe\\', DS, $class) . '.php';
+		$path = $base . DS . 'stripe' . DS . 'lib' . str_replace('Stripe\\', DS, $class) . '.php';
 		// for nested classes
 		$path = str_replace('\\', DS, $path);
 		if (file_exists($path)) {
